@@ -4,6 +4,9 @@ cd "$(dirname $0)"/..
 
 SYSTEM_NAME=${LMOD_SYSTEM_NAME}
 if [ -z "${SYSTEM_NAME}" ]; then
+  SYSTEM_NAME=${SLURM_CLUSTER_NAME}
+fi
+if [ -z "${SYSTEM_NAME}" ]; then
   SYSTEM_NAME=${HOSTNAME%%.*}
 fi
 
