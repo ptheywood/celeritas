@@ -27,12 +27,23 @@
         "CMAKE_CXX_EXTENSIONS": {"type": "BOOL", "value": "OFF"},
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/install-${presetName}",
         "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG -mcpu=native",
-        "CMAKE_CUDA_FLAGS_RELEASE": "-O3 -DNDEBIG -lineinfo -Xcompiler -mcpu=native",
+        "CMAKE_CUDA_FLAGS_RELEASE": "-O3 -DNDEBIG -lineinfo -Xcompiler -mcpu=naqtive",
         "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG -mcpu=native",
         "CMAKE_CUDA_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG -lineinfo -Xcompiler -mcpu=native",
         "CMAKE_EXPORT_COMPILE_COMMANDS": {"type": "BOOL", "value": "ON"},
         "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wno-psabi",
         "CMAKE_CUDA_FLAGS": "-Xcompiler -Wno-psabi"
+      }
+    },
+    {
+      "name": ".gpu-debug",
+      "hidden": true,
+      "description": "Enable GPU debug mode (mutually exclusive with -lineinfo)",
+      "cacheVariables": {
+        "BUILD_SHARED_LIBS":{"type": "BOOL", "value": "ON"},
+        "CELERITAS_DEBUG":      {"type": "BOOL",   "value": "ON"},
+        "CMAKE_BUILD_TYPE":     {"type": "STRING", "value": "Debug"},
+        "CMAKE_CUDA_FLAGS_DEBUG": "-G"
       }
     },
     {
